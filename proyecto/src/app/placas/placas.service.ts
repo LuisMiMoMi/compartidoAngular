@@ -16,6 +16,6 @@ export class PlacasService {
   getPlacas(): Observable<Placa[]>{   // retorna un observable al que cal subscriure's
     return this.http.get<{placas: Placa[]}>(this.placasURL).pipe( // get retorna un observable i pipe accepta funcions de manipulació de les dades
       map(response => response.placas) // de la resposta traguem l'array que ens interessa
-      );
+    );
   }
 }

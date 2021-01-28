@@ -8,12 +8,7 @@ import { PlacasService } from '../placas.service';
 })
 export class PlacasListComponent implements OnInit {
 
-  placas: Placa[] = [
-    {id: "Placa1", power: 400},
-    {id: "Placa2", power: 401},
-    {id: "Placa3", power: 402},
-    {id: "Placa4", power: 403}
-  ];
+  placas: Placa[];
 
   constructor(private placasService: PlacasService) { }
 

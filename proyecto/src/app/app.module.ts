@@ -9,6 +9,7 @@ import { PlacasItemComponent } from './placas/placas-item/placas-item.component'
 import { HomeComponent } from './components/home/home.component';
 import { PlacasService } from './placas/placas.service';
 import {HttpClientModule} from '@angular/common/http';
+import { PlacasDetailComponent } from './placas/placas-detail/placas-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     PlacasListComponent,
     PlacasItemComponent,
-    HomeComponent
+    HomeComponent,
+    PlacasDetailComponent
   ],
   imports: [
     BrowserModule,

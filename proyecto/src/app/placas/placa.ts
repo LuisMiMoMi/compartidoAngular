@@ -1,5 +1,6 @@
 export interface Placa {
-    name: string;
+    id: string;
+    city: string;
     power: number;
     photo?: string;
     production?: number[];

@@ -1,8 +1,10 @@
-<section id="gallery">
-    <div class="container">
-        <div class="row row-cols-sm-1 row-cols-md-3 row-cols-lg-2 g-4">
-            <app-placas-item [placa]="placa" *ngFor="let placa of placas"></app-placas-item>
+<div class="container">
+    <h2>Placas:</h2>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-8">
+            <ul class="list-group" style="max-width: 900px;">
+                <app-placas-item [placa]="placa" *ngFor="let placa of placas"></app-placas-item>
+            </ul>
         </div>
     </div>
-</section>
-
+</div>

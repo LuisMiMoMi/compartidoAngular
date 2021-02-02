@@ -1,8 +1,13 @@
-<div class="card">
-    <img src="{{placa.photo}}" alt="" class="card-img-top">
-    <div class="card-body">
-        <h5 class="card-title">{{placa.name}}</h5>
-        <p class="card-text">Power: {{placa.power}}</p>
-        <a href="" class="btn btn-outline-success btn-sm">Detalles</a>
+<li class="list-group-item d-flex justify-content-between align-items-center">
+    <div class="" style="max-width: 100px;">
+        <img src="{{placa.photo}}" class="rounded" style="width: 250px;">
     </div>
-</div>
+    <div>
+        <div>
+            <p>Id: {{placa.id}}</p>
+            <p>Ciudad: {{placa.city}}</p>
+            <p>Potencia: {{placa.power}}W</p>
+        </div>
+    </div>
+    <a class="btn btn-dark"[routerLink]="['/placa', placa.id]">Detalles</a>
+</li>

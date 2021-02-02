@@ -10,6 +10,9 @@ import { HomeComponent } from './components/home/home.component';
 import { PlacasService } from './placas/placas.service';
 import {HttpClientModule} from '@angular/common/http';
 import { PlacasDetailComponent } from './placas/placas-detail/placas-detail.component';
+import { ToKWPipe } from './placas/to-kw.pipe';
+import { FiltroPlacasPipe } from './placas/filtro-placas.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,15 @@ import { PlacasDetailComponent } from './placas/placas-detail/placas-detail.comp
     PlacasListComponent,
     PlacasItemComponent,
     HomeComponent,
-    PlacasDetailComponent
+    PlacasDetailComponent,
+    ToKWPipe,
+    FiltroPlacasPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [PlacasService],
   bootstrap: [AppComponent]

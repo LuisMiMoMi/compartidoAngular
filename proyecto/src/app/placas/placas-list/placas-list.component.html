@@ -1,9 +1,10 @@
 <div class="container">
     <h2>Placas:</h2>
+    <label>Filtro:</label><input type="text" name="buscaPlaca" id="buscaPlaca" [(ngModel)] = "criterio">
     <div class="row">
         <div class="col-12 col-sm-12 col-lg-8">
             <ul class="list-group" style="max-width: 900px;">
-                <app-placas-item [placa]="placa" *ngFor="let placa of placas"></app-placas-item>
+                <app-placas-item [placa]="placa" *ngFor="let placa of placas | filtroPlacas: criterio"></app-placas-item>
             </ul>
         </div>
     </div>

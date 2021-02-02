@@ -6,8 +6,8 @@
         <div>
             <p>Id: {{placa.id}}</p>
             <p>Ciudad: {{placa.city}}</p>
-            <p>Potencia: {{placa.power}}W</p>
+            <p>Potencia: {{placa.power | toKW}}</p>
         </div>
     </div>
     <a class="btn btn-dark"[routerLink]="['/placa', placa.id]">Detalles</a>
-</li>
+</li><br>

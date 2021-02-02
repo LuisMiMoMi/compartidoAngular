@@ -4,4 +4,5 @@ export interface Placa {
     power: number;
     photo?: string;
     production?: number[];
+    cliente?: string;
 }

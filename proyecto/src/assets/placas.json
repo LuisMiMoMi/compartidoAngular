@@ -1,5 +1,5 @@
 {"placas": [
-    {"id": "001", "city": "Xàtiva", "power": 460, "production": [300,310,315,315,316,320,315,315,315,310,300,200,100,0,0,0,0,10,20,30,100,150,140], "photo": "/assets/img/placa1.jpg"},
-    {"id": "002", "city": "Genovés", "power": 500, "production": [300,100,0,0,0,0,10,20,30,100,150,140,310,315,315,316,320,315,315,315,310,300,200], "photo": "/assets/img/placa2.jpg"},
-    {"id": "003", "city": "Alcudia", "power": 400, "production": [0,0,0,0,10,20,30,100,150,140,300,310,315,315,316,320,315,315,315,310,300,200,100], "photo": "/assets/img/placa3.jpg"}
+    {"id": "001", "city": "Xàtiva", "power": 460, "production": [300,310,315,315,316,320,315,315,315,310,300,200,100,0,0,0,0,10,20,30,100,150,140,120], "photo": "/assets/img/placa1.jpg", "cliente": "Luis Miguel Montell Mira"},
+    {"id": "002", "city": "Genovés", "power": 500, "production": [300,100,0,0,0,0,10,20,30,100,150,140,310,315,315,316,320,315,315,315,310,300,200,170], "photo": "/assets/img/placa2.jpg", "cliente": "Jose Castillo"},
+    {"id": "003", "city": "Alcudia", "power": 400, "production": [0,0,0,0,10,20,30,100,150,140,300,310,315,315,316,320,315,315,315,310,300,200,100,50], "photo": "/assets/img/placa3.jpg", "cliente": "Luis Miguel Montell Mira"}
 ]}

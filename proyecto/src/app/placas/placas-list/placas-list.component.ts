@@ -9,7 +9,7 @@ import { PlacasService } from '../placas.service';
 export class PlacasListComponent implements OnInit {
 
   placas: Placa[];
-
+  criterio: string = "";
   constructor(private placasService: PlacasService) { }
 
   ngOnInit(): void {

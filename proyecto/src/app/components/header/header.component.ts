@@ -8,16 +8,23 @@ import { SignService } from 'src/app/usuario/sign.service';
 
 export class HeaderComponent implements OnInit {
 
+  loged: boolean = false;
+
   constructor(private sign: SignService) { }
 
-  @Input() loged = false;
-
   ngOnInit(): void {
+    this.loged = this.sign.isSigned();
+    this.sign.isLoged().subscribe(
+      l => this.loged = l
+    );
   }
-  
+
+  /*isLoged(): boolean{
+    return this.sign.isSigned();
+  }*/
+
   logout(): void {
     this.sign.logOut();
-    this.loged = false;
   }
 
 }

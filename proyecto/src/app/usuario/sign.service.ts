@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Usuario } from './usuario';
 
@@ -10,7 +10,9 @@ import { Usuario } from './usuario';
 })
 export class SignService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {
+    this.logedInfo = new BehaviorSubject<boolean>(false);
+  }
 
   userURL = '/assets/usuarios.json';
 
@@ -21,7 +23,6 @@ export class SignService {
         localStorage.setItem('token', us.token);
         if (recuerdame) {
           localStorage.setItem('user', us.user);
-          //this.header.loged = true;
         } else {
           localStorage.removeItem('user');
         }
@@ -33,16 +34,24 @@ export class SignService {
 
   isSigned(): boolean{
     if (localStorage.getItem("token")) {
+      this.logedInfo.next(true);
       return true;
     } else {
+      this.logedInfo.next(false);
       return false;
     }
   }
 
+  private logedInfo: BehaviorSubject<boolean>;
+  isLoged(): Observable<boolean>{
+    return this.logedInfo.asObservable();
+  }
+
   logOut(): void {
     if (localStorage.getItem("token")) {
-      this.router.navigate(["/login"]);
       localStorage.removeItem("token");
+      this.logedInfo.next(false);
+      this.router.navigate(["/login"]);
     }
   }
 }

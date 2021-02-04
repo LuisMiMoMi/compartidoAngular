@@ -11,10 +11,19 @@
             [routerLink]="['home']" 
             [routerLinkActive]="['active']" >Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!loged">
             <a class="nav-link" 
+            [routerLink]="['login']"
+            [routerLinkActive]="['active']">Login</a>
+          </li>
+          <li class="nav-item" *ngIf="!loged">
+            <a class="nav-link"
             [routerLink]="['placas']" 
             [routerLinkActive]="['active']">Placas</a>
+          </li>
+          <li class="nav-item" *ngIf="!loged" style="cursor: pointer">
+            <a class="nav-link" 
+            (click)="logout();">Logout</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

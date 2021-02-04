@@ -13,6 +13,7 @@ import { PlacasDetailComponent } from './placas/placas-detail/placas-detail.comp
 import { ToKWPipe } from './placas/to-kw.pipe';
 import { FiltroPlacasPipe } from './placas/filtro-placas.pipe';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     PlacasDetailComponent,
     ToKWPipe,
-    FiltroPlacasPipe
+    FiltroPlacasPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

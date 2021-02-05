@@ -5,4 +5,5 @@ export interface Placa {
     photo?: string;
     production?: number[];
     cliente?: string;
+    propietario: string;
 }

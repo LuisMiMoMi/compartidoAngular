@@ -1,4 +1,4 @@
-<li class="list-group-item d-flex justify-content-between align-items-center">
+<li appMostrarPropietario [disp]="disp" class="list-group-item d-flex justify-content-between align-items-center">
     <div class="" style="max-width: 100px;">
         <img src="{{placa.photo}}" class="rounded" style="width: 250px;">
     </div>
@@ -7,6 +7,7 @@
             <p>Id: {{placa.id}}</p>
             <p>Ciudad: {{placa.city}}</p>
             <p>Potencia: {{placa.power | toKW}}</p>
+            <p #disp style="display: none;">Propietario: {{placa.propietario}}</p>
         </div>
     </div>
     <a class="btn btn-dark"[routerLink]="['/placa', placa.id]">Detalles</a>

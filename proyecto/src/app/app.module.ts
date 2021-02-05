@@ -14,6 +14,7 @@ import { ToKWPipe } from './placas/to-kw.pipe';
 import { FiltroPlacasPipe } from './placas/filtro-placas.pipe';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { MostrarPropietarioDirective } from './directivas/mostrar-propietario.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginComponent } from './components/login/login.component';
     PlacasDetailComponent,
     ToKWPipe,
     FiltroPlacasPipe,
-    LoginComponent
+    LoginComponent,
+    MostrarPropietarioDirective
   ],
   imports: [
     BrowserModule,

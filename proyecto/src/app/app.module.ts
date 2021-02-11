@@ -12,7 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { PlacasDetailComponent } from './placas/placas-detail/placas-detail.component';
 import { ToKWPipe } from './placas/to-kw.pipe';
 import { FiltroPlacasPipe } from './placas/filtro-placas.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { MostrarPropietarioDirective } from './directivas/mostrar-propietario.directive';
 
@@ -34,6 +34,7 @@ import { MostrarPropietarioDirective } from './directivas/mostrar-propietario.di
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [PlacasService],
   bootstrap: [AppComponent]

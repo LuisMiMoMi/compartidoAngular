@@ -15,6 +15,8 @@ import { FiltroPlacasPipe } from './placas/filtro-placas.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { MostrarPropietarioDirective } from './directivas/mostrar-propietario.directive';
+import { ForCargaDirective } from './directivas/for-carga.directive';
+import { LineChartComponent } from './placas/placas-detail/line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { MostrarPropietarioDirective } from './directivas/mostrar-propietario.di
     ToKWPipe,
     FiltroPlacasPipe,
     LoginComponent,
-    MostrarPropietarioDirective
+    MostrarPropietarioDirective,
+    ForCargaDirective,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@ export class LineChartComponent {
 
   ngOnInit(): void {
     this.placasService.getPlaca(this.id).subscribe(
-      placa => this.placa= placa
+      placa => this.placa = placa
     )
   }
 

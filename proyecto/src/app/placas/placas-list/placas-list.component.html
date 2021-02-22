@@ -2,10 +2,11 @@
     <h2>Placas:</h2>
     <label>Filtro ciudad:</label><input type="text" name="buscaPlaca" id="buscaPlaca" [(ngModel)] = "criterio"><br>
     <a class="btn btn-dark" [routerLink]="['/placas/nueva']">Crea una nueva placa</a>
+    <p [ngStyle]="{'display':colorin === true ? '' : 'none', 'color': 'red'}">Se ha informado de un error</p>
     <div class="row">
         <div class="col-12 col-sm-12 col-lg-8">
             <ul class="list-group" style="max-width: 900px;">
-                <app-placas-item [placa]="placa" *ngFor="let placa of placas | filtroPlacas: criterio"></app-placas-item>
+                <app-placas-item [placa]="placa" (newAnuncioEvent)="cambiaColor()" *ngFor="let placa of placas | filtroPlacas: criterio"></app-placas-item>
             </ul>
         </div>
     </div>

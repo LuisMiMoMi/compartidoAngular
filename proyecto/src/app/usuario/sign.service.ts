@@ -19,7 +19,7 @@ export class SignService {
   signUser(user: Usuario, recuerdame): Observable<Usuario> {
     return this.http.get<Usuario>(this.userURL).pipe(
       map(us => {
-        if (user && us.user == user.user && us.passwd == user.passwd) {
+        //if (user && us.user == user.user && us.passwd == user.passwd) {
           localStorage.setItem('token', us.token);
           if (recuerdame) {
             localStorage.setItem('user', us.user);
@@ -28,10 +28,10 @@ export class SignService {
           }
           this.router.navigate(["/placas"]);
           return us;
-        } else {
+        /*} else {
           this.router.navigate(["/login"]);
           return user;
-        }
+        }*/
       })
     );
   }

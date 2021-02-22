@@ -21,6 +21,16 @@ import { LineChartComponent } from './placas/placas-detail/line-chart/line-chart
 import { PlacasEditComponent } from './placas/placas-edit/placas-edit.component';
 import { MaxChargeDirective } from './directivas/validaciones/max-charge.directive';
 import { PlacasNuevasComponent } from './placas/placas-nuevas/placas-nuevas.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -46,7 +56,18 @@ import { PlacasNuevasComponent } from './placas/placas-nuevas/placas-nuevas.comp
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [PlacasService],
   bootstrap: [AppComponent]

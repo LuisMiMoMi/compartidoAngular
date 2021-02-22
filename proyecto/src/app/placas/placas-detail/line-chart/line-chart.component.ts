@@ -1,8 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
-import { Placa } from '../../placa';
-import { PlacasService } from '../../placas.service';
 
 @Component({
   selector: 'app-line-chart',
@@ -10,21 +8,25 @@ import { PlacasService } from '../../placas.service';
 })
 export class LineChartComponent implements OnInit {
 
-  /*@Input()
-  id: string;*/
-
   @Input()
   production!: Array<number>;
-  
-  constructor(private placasService: PlacasService) { }
+
+  product: Array<number> = [30];
+  constructor() { }
 
   ngOnInit() {
-    /*this.placasService.getPlaca(this.id).subscribe(
-      p => this.production = p.production
-    )*/
+    this.añadirElementos();
     this.lineChartData = [
-      { data: this.production, label: 'Producción estimada' },
+      { data: this.product, label: 'Producción estimada' },
+      { data: this.production, label: 'Producción media de las placas' }
     ]
+    
+  }
+
+  añadirElementos(){
+    for (let index = 0; index < 24; index++) {
+      setTimeout(() => this.product.push(Math.floor(Math.random()*(400-10)+10)), Math.floor(Math.random()*5000))
+    }
   }
 
   public lineChartData: ChartDataSets[];
@@ -37,7 +39,7 @@ export class LineChartComponent implements OnInit {
       backgroundColor: 'rgba(255,0,0,0.3)',
     },
     {
-      borderColor: 'blue',
+      borderColor: 'black',
       backgroundColor: 'rgba(0,0,255,0.3)',
     }
   ];

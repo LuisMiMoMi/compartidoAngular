@@ -1,56 +1,62 @@
 <form [formGroup]="formPlaca">
-    <div class="form-row">
-      <div class="form-group col-md-6">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <mat-form-field>
         <label for="inputId">Id</label>
-        <input type="number" name="id" class="form-control" id="inputId" formControlName="id" 
+        <input matInput type="number" name="id" id="inputId" formControlName="id" 
         [ngClass]="{'is-valid': idValid.valid && idValid.touched,
         'is-invalid': idValid.invalid && idValid.touched}">
         <div *ngIf="idValid.touched && idValid.invalid" class="alert alert-danger">El id no es válido</div>
-      </div>
-      <div class="form-group col-md-6">
+      </mat-form-field>
+    </div>
+    <div class="form-group col-md-6">
+      <mat-form-field>
         <label for="inputCiudad">Ciudad</label>
-        <input type="text" name="city" class="form-control" id="inputCiudad"  formControlName="city"
+        <input matInput type="text" name="city" id="inputCiudad"  formControlName="city"
         [ngClass]="{'is-valid': cityValid.valid && cityValid.touched,
         'is-invalid': cityValid.invalid && cityValid.touched}">
         <div *ngIf="cityValid.touched && cityValid.invalid" class="alert alert-danger">La ciudad no es válida</div>
-      </div>
+     </mat-form-field>
     </div>
-    <div class="form-group">
+  </div>
+  <div class="form-group">
+    <mat-form-field>
       <label for="inputCliente">Cliente</label>
-      <input type="text" name="cliente" class="form-control" id="inputCliente"  formControlName="cliente"
+     <input matInput type="text" name="cliente" id="inputCliente"  formControlName="cliente"
       [ngClass]="{'is-valid': clienteValid.valid && clienteValid.touched,
-        'is-invalid': clienteValid.invalid && clienteValid.touched}">
-        <div *ngIf="clienteValid.touched && clienteValid.invalid" class="alert alert-danger">La ciudad no es válida</div>
-    </div>
-    <div class="form-group">
+      'is-invalid': clienteValid.invalid && clienteValid.touched}">
+      <div *ngIf="clienteValid.touched && clienteValid.invalid" class="alert alert-danger">El cliente no es válido</div>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
       <label for="inputPropietario">Propietario</label>
-      <input type="text" name="propietario" class="form-control" id="inputPropietario"  formControlName="propietario"
+      <input matInput type="text" name="propietario" id="inputPropietario"  formControlName="propietario"
       [ngClass]="{'is-valid': propietarioValid.valid && propietarioValid.touched,
-        'is-invalid': propietarioValid.invalid && propietarioValid.touched}">
-        <div *ngIf="propietarioValid.touched && propietarioValid.invalid" class="alert alert-danger">La ciudad no es válida</div>
-    </div>
-    <div class="form-row">
+      'is-invalid': propietarioValid.invalid && propietarioValid.touched}">
+      <div *ngIf="propietarioValid.touched && propietarioValid.invalid" class="alert alert-danger">El propietario no es válido</div>
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-form-field>
       <div class="form-group col-md-6">
-        <label for="inputPotencia">Potencia</label>
-        <input type="text" name="power" class="form-control" id="inputPotencia"  formControlName="power"
-        [ngClass]="{'is-valid': powerValid.valid && powerValid.touched,
-        'is-invalid': powerValid.invalid && powerValid.touched}">
-        <div *ngIf="powerValid.touched && powerValid.invalid" class="alert alert-danger">La ciudad no es válida</div>
+      <label for="inputPotencia">Potencia</label>
+      <input matInput type="text" name="power" id="inputPotencia"  formControlName="power"
+      [ngClass]="{'is-valid': powerValid.valid && powerValid.touched,
+      'is-invalid': powerValid.invalid && powerValid.touched}">
+      <div *ngIf="powerValid.touched && powerValid.invalid" class="alert alert-danger">La potencia no es válida</div>
       </div>
-    </div>
-    <div class="form-group" formArrayName="production">
-        <label for="inputProduction">Producción</label>
-        <div class="col" *ngFor="let p of productionArray.controls; let i = index">
-            <input type="number" class="form-control col" [formControlName]="i" aria-label="production1">
-            <button type="button" class="col btn btn-outline-danger" (click)="delProduction(i)">Borra</button>
-        </div>
-        <button type="button" class="col btn btn-primary" (click)="addProduction()">Añadir Producción</button>
-    </div><br>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    </mat-form-field>
+  </div>
+  <div class="form-group" formArrayName="production">
+    <mat-form-field>
+      <label for="inputProduction">Producción</label>
+      <div class="col" *ngFor="let p of productionArray.controls; let i = index">
+          <input matInput type="number" [formControlName]="i" aria-label="production1">
+          <button type="button" mat-fab color="warn" (click)="delProduction(i)"><mat-icon>delete</mat-icon></button>
+      </div>
+      <button type="button" mat-mini-fab color="accent"  (click)="addProduction()"><mat-icon>plus_one</mat-icon></button>
+      </mat-form-field>
+  </div><br>
+  <button type="submit" mat-raised-button color="primary">Enviar</button>
 </form>
-
-<hr>
-<pre>
-    valid: {{formPlaca.valid}}
-    formulari: {{formPlaca.value | json}}
-</pre>

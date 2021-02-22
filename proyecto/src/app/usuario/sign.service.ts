@@ -19,20 +19,24 @@ export class SignService {
   signUser(user: Usuario, recuerdame): Observable<Usuario> {
     return this.http.get<Usuario>(this.userURL).pipe(
       map(us => {
-        us["passwd"] = user.passwd;
-        localStorage.setItem('token', us.token);
-        if (recuerdame) {
-          localStorage.setItem('user', us.user);
+        if (user && us.user == user.user && us.passwd == user.passwd) {
+          localStorage.setItem('token', us.token);
+          if (recuerdame) {
+            localStorage.setItem('user', us.user);
+          } else {
+            localStorage.removeItem('user');
+          }
+          this.router.navigate(["/placas"]);
+          return us;
         } else {
-          localStorage.removeItem('user');
+          this.router.navigate(["/login"]);
+          return user;
         }
-        this.router.navigate(["/placas"]);
-        return us;
       })
     );
   }
 
-  isSigned(): boolean{
+  isSigned(): boolean {
     if (localStorage.getItem("token")) {
       this.logedInfo.next(true);
       return true;
@@ -43,7 +47,7 @@ export class SignService {
   }
 
   private logedInfo: BehaviorSubject<boolean>;
-  isLoged(): Observable<boolean>{
+  isLoged(): Observable<boolean> {
     return this.logedInfo.asObservable();
   }
 

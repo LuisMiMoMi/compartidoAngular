@@ -1,0 +1,56 @@
+<form [formGroup]="formPlaca">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputId">Id</label>
+        <input type="number" name="id" class="form-control" id="inputId" formControlName="id" 
+        [ngClass]="{'is-valid': idValid.valid && idValid.touched,
+        'is-invalid': idValid.invalid && idValid.touched}">
+        <div *ngIf="idValid.touched && idValid.invalid" class="alert alert-danger">El id no es válido</div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputCiudad">Ciudad</label>
+        <input type="text" name="city" class="form-control" id="inputCiudad"  formControlName="city"
+        [ngClass]="{'is-valid': cityValid.valid && cityValid.touched,
+        'is-invalid': cityValid.invalid && cityValid.touched}">
+        <div *ngIf="cityValid.touched && cityValid.invalid" class="alert alert-danger">La ciudad no es válida</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputCliente">Cliente</label>
+      <input type="text" name="cliente" class="form-control" id="inputCliente"  formControlName="cliente"
+      [ngClass]="{'is-valid': clienteValid.valid && clienteValid.touched,
+        'is-invalid': clienteValid.invalid && clienteValid.touched}">
+        <div *ngIf="clienteValid.touched && clienteValid.invalid" class="alert alert-danger">La ciudad no es válida</div>
+    </div>
+    <div class="form-group">
+      <label for="inputPropietario">Propietario</label>
+      <input type="text" name="propietario" class="form-control" id="inputPropietario"  formControlName="propietario"
+      [ngClass]="{'is-valid': propietarioValid.valid && propietarioValid.touched,
+        'is-invalid': propietarioValid.invalid && propietarioValid.touched}">
+        <div *ngIf="propietarioValid.touched && propietarioValid.invalid" class="alert alert-danger">La ciudad no es válida</div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputPotencia">Potencia</label>
+        <input type="text" name="power" class="form-control" id="inputPotencia"  formControlName="power"
+        [ngClass]="{'is-valid': powerValid.valid && powerValid.touched,
+        'is-invalid': powerValid.invalid && powerValid.touched}">
+        <div *ngIf="powerValid.touched && powerValid.invalid" class="alert alert-danger">La ciudad no es válida</div>
+      </div>
+    </div>
+    <div class="form-group" formArrayName="production">
+        <label for="inputProduction">Producción</label>
+        <div class="col" *ngFor="let p of productionArray.controls; let i = index">
+            <input type="number" class="form-control col" [formControlName]="i" aria-label="production1">
+            <button type="button" class="col btn btn-outline-danger" (click)="delProduction(i)">Borra</button>
+        </div>
+        <button type="button" class="col btn btn-primary" (click)="addProduction()">Añadir Producción</button>
+    </div><br>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<hr>
+<pre>
+    valid: {{formPlaca.valid}}
+    formulari: {{formPlaca.value | json}}
+</pre>

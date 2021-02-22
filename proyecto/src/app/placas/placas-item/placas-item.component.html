@@ -10,5 +10,9 @@
             <p #disp style="display: none;">Propietario: {{placa.propietario}}</p>
         </div>
     </div>
-    <a class="btn btn-dark" [routerLink]="['/placa', placa.id]">Detalles</a>
+    <div>
+        <a class="btn btn-dark" [routerLink]="['/placa', placa.id]">Detalles</a>
+        <br><br>
+        <a class="btn btn-dark" [routerLink]="['/placa/edit', placa.id]">Editar</a>
+    </div>
 </li><br>

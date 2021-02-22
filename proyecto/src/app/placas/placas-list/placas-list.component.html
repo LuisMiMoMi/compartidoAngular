@@ -1,6 +1,7 @@
 <div class="container">
     <h2>Placas:</h2>
-    <label>Filtro ciudad:</label><input type="text" name="buscaPlaca" id="buscaPlaca" [(ngModel)] = "criterio">
+    <label>Filtro ciudad:</label><input type="text" name="buscaPlaca" id="buscaPlaca" [(ngModel)] = "criterio"><br>
+    <a class="btn btn-dark" [routerLink]="['/placas/nueva']">Crea una nueva placa</a>
     <div class="row">
         <div class="col-12 col-sm-12 col-lg-8">
             <ul class="list-group" style="max-width: 900px;">

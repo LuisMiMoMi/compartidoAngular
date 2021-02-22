@@ -16,7 +16,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { MostrarPropietarioDirective } from './directivas/mostrar-propietario.directive';
 import { ForCargaDirective } from './directivas/for-carga.directive';
+import { ChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './placas/placas-detail/line-chart/line-chart.component';
+import { PlacasEditComponent } from './placas/placas-edit/placas-edit.component';
+import { MaxChargeDirective } from './directivas/validaciones/max-charge.directive';
+import { PlacasNuevasComponent } from './placas/placas-nuevas/placas-nuevas.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +35,18 @@ import { LineChartComponent } from './placas/placas-detail/line-chart/line-chart
     LoginComponent,
     MostrarPropietarioDirective,
     ForCargaDirective,
-    LineChartComponent
+    LineChartComponent,
+    PlacasEditComponent,
+    MaxChargeDirective,
+    PlacasNuevasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [PlacasService],
   bootstrap: [AppComponent]

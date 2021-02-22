@@ -1,0 +1,41 @@
+<form novalidate #formPlaca="ngForm" (ngSubmit)="edit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputId">Id</label>
+        <input type="number" name="id" class="form-control" id="inputId" readonly [(ngModel)]="placa.id">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputCiudad">Ciudad</label>
+        <input type="text" name="city" class="form-control" id="inputCiudad" #inputCiudad="ngModel" [(ngModel)]="placa.city" required minlength="5"
+        [ngClass]="{'is-valid': inputCiudad.valid && inputCiudad.touched,
+        'is-invalid': inputCiudad.invalid && inputCiudad.touched}">
+        <div *ngIf="inputCiudad.touched && inputCiudad.invalid" class="alert alert-danger">La ciudad no es válida</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputCliente">Cliente</label>
+      <input type="text" name="cliente" class="form-control" id="inputCliente" #inputCliente="ngModel" [(ngModel)]="placa.cliente" required minlength="5"
+      [ngClass]="{'is-valid': inputCliente.valid && inputCliente.touched,
+        'is-invalid': inputCliente.invalid && inputCliente.touched}">
+        <div *ngIf="inputCliente.touched && inputCliente.invalid" class="alert alert-danger">El cliente no es válida</div>
+    </div>
+    <div class="form-group">
+      <label for="inputPropietario">Propietario</label>
+      <input type="text" name="propietario" class="form-control" id="inputPropietario" #inputPropietario="ngModel" [(ngModel)]="placa.propietario" required minlength="5"
+      [ngClass]="{'is-valid': inputPropietario.valid && inputPropietario.touched,
+        'is-invalid': inputPropietario.invalid && inputPropietario.touched}">
+        <div *ngIf="inputPropietario.touched && inputPropietario.invalid" class="alert alert-danger">El propietario no es válida</div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputPotencia">Potencia</label>
+        <input type="text" name="power" class="form-control" id="inputPotencia" [(ngModel)]="placa.power" #inputPower="ngModel" required appMaxCharge="500"
+        [ngClass]="{'is-valid': inputPower.valid && inputPower.touched,
+        'is-invalid': inputPower.invalid && inputPower.touched}">
+        <div *ngIf="inputPower.touched && inputPower.invalid" class="alert alert-danger">La potencia no es válida</div>
+      </div>
+    </div><br>
+    <input type="hidden" name="photo" id="inputPhoto" [(ngModel)]="placa.photo" #inputPower="ngModel">
+    <input type="hidden" name="production" id="inputPhoto" [(ngModel)]="placa.production" #inputProd="ngModel">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

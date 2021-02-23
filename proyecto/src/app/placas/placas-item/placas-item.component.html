@@ -5,7 +5,7 @@
     <div>
         <div>
             <p>Id: {{placa.id}}</p>
-            <p>Ciudad: {{placa.city}}</p>
+            <p>Ciudad: {{placa.city | uppercase}}</p>
             <p>Potencia: {{placa.power | toKW}}</p>
             <p #disp style="display: none;">Propietario: {{placa.propietario}}</p>
         </div>

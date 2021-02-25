@@ -6,7 +6,7 @@
       "cliente": "Luis Miguel Montell Mira",
       "propietario": "LusiDrola",
       "power": 460,
-      "photo": "/assets/img/placa1.jpg",
+      "photo": "assets/img/placa1.jpg",
       "production": [
         200,
         100,
@@ -40,7 +40,7 @@
       "cliente": "Jose Castillo",
       "propietario": "LusiDrola",
       "power": 500,
-      "photo": "/assets/img/placa2.jpg",
+      "photo": "assets/img/placa2.jpg",
       "production": [
         300,
         100,
@@ -74,7 +74,7 @@
       "cliente": "Luis Miguel Montell Mira",
       "propietario": "Iberdrola",
       "power": 400,
-      "photo": "/assets/img/placa3.jpg",
+      "photo": "assets/img/placa3.jpg",
       "production": [
         0,
         0,
@@ -108,7 +108,7 @@
       "cliente": "Ismael Romero",
       "propietario": "LusiDrola",
       "power": 150,
-      "photo": "/assets/img/placa4.png",
+      "photo": "assets/img/placa4.png",
       "production": [
         120,
         100,
@@ -142,7 +142,7 @@
       "cliente": "Pablo Pardo",
       "propietario": "Iberdrola",
       "power": 200,
-      "photo": "/assets/img/placa5.jpeg",
+      "photo": "assets/img/placa5.jpeg",
       "production": [
         300,
         100,
@@ -176,7 +176,7 @@
       "cliente": "Mari Nieves",
       "propietario": "LusiDrola",
       "power": 350,
-      "photo": "/assets/img/placa6.jpg",
+      "photo": "assets/img/placa6.jpg",
       "production": [
         300,
         100,

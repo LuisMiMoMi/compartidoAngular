@@ -14,7 +14,7 @@ export class SignService {
     this.logedInfo = new BehaviorSubject<boolean>(false);
   }
 
-  userURL = '/assets/usuarios.json';
+  userURL = 'assets/usuarios.json';
 
   signUser(user: Usuario, recuerdame): Observable<Usuario> {
     return this.http.get<Usuario>(this.userURL).pipe(

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Placa } from '../placa';
 import { PlacasService } from '../placas.service';
 
@@ -13,7 +13,7 @@ export class PlacasEditComponent implements OnInit {
   placa: Placa;
   @ViewChild('formPlaca', {static:true}) placaForm: NgForm;
 
-  constructor(private activatedRoute: ActivatedRoute, private placasService: PlacasService) { }
+  constructor(private activatedRoute: ActivatedRoute, private placasService: PlacasService, private router: Router) { }
 
   ngOnInit(): void {
     this.placa = this.activatedRoute.snapshot.data['placa'];
@@ -21,6 +21,7 @@ export class PlacasEditComponent implements OnInit {
 
   edit(){
     this.placasService.modPlaca(this.placaForm.value).subscribe(placa => this.placa = placa);
+    this.router.navigate(['/placas']);
     return false;
   }
 }
